@@ -1,0 +1,21 @@
+header {
+	text-align: center;
+	font-family: "Voltaire";
+
+}
+
+
+body > .container > h3 {
+	text-align: center;
+	padding: 5px 50px;
+	border-radius: 5px;
+	background-color: #729D34;
+	font-family: "Voltaire";
+	color: white;
+	margin: 20px 0px;
+}
+
+
+footer {
+	text-align: center;
+}

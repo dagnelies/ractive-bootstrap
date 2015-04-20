@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<title>Bootstrap plugin for Ractive.js</title>
+	
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!-- Code Mirror -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/codemirror.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/codemirror.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/javascript/javascript.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/xml/xml.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/htmlmixed/htmlmixed.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/css/css.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.1.0/mode/php/php.min.js"></script>
+	
+	<!-- Ractive
+	<script src='libs/ractive.js'></script> -->
+	<script src='http://cdn.ractivejs.org/edge/ractive.js'></script> 
+	<script src="http://dagnelies.github.io/ractive-codemirror/src/ractive-codemirror.js"></script>
+	<script src='bin/ractive-bootstrap.js'></script>
+	<script src='demo-example.js'></script>
+	
+	<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<script id="template" type="ractive">
+		<a href="https://github.com/dagnelies/ractive-bootstrap"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
+		
+		<header>
+			<h1>Bootstrap plugin for Ractive.js</h1>
+		</header>
+		
+		<container>
+
+			<hr/>
+			
+			<p><i>This Ractive plugin provides helper shortcuts for most bootstrap widgets.</i></p>
+			
+			<p><i>The goal of this plugin is to help you get started quickly and reduce the overly verbose code that bootstrap tends to produce.
+			It does not attempt to cover everything in bootstrap, but rather offer the most common elements as shortcuts.
+			Sometimes, when you want something more specific or fancy, you can still use the original bootstrap markup.</i></p>
+			
+		
+			<h3>Grid System</h3>
+			<example url="demo/grid-system.html" />
+			
+			<h3>Tables</h3>
+			<example url="demo/tables.html" />
+			
+			<h3>Forms</h3>
+			<example url="demo/forms.html" />
+			
+			<h3>Buttons</h3>
+			<example url="demo/buttons.html" />
+			
+			<h3>Images &amp; Thumbnails</h3>
+			<example url="demo/images.html" />
+			
+			<h3>Glyphicons</h3>
+			<example url="demo/icons.html" />
+			
+			<h3>Dropdowns</h3>
+			<example url="demo/dropdowns.html" />
+			
+			<h3>Button groups</h3>
+			<example url="demo/button-groups.html" />
+			
+			<h3>Input groups</h3>
+			<example url="demo/input-groups.html" />
+			
+			<h3 id="tabs-pills">Tabs & Pills</h3>
+			<example url="demo/tabs-pills.html" />
+			
+		</container>
+		<hr/>
+		<footer>
+			<p>Copyright © 2015 Arnaud Dagnelies. Licensed MIT</p>
+		</footer>
+	</script>
+	<script>
+		var ractive = new Ractive({
+			el: 'body',
+			template: '#template',
+			data: {}
+		});
+	</script>
+  
+</body>
+</html>
+
