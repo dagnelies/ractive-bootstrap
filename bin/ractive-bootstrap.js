@@ -1,4 +1,12 @@
 
+/* Alerts */
+
+Ractive.components['alert'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'info' },
+	template: "<div id='{{id}}' hidden='{{hidden}}' class='alert alert-{{type}} {{#closable}}alert-dismissible{{/closable}}'>{{#closable}}<button type='button' class='close' data-dismiss='alert'>&times;</button>{{/closable}}{{yield}}</div>"
+})
+
 
 /* Button groups */
 
@@ -416,6 +424,22 @@ Ractive.components['pagination'] = Ractive.extend({
 	template: "<ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul>"
 })
 
+
+/* Panels */
+
+Ractive.components['panel'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'default' },
+	template: "<panel-custom type='{{type}}' hidden='{{hidden}}'>{{#title}}<panel-heading>{{#icon}}<icon name='{{icon}}'/> {{/icon}}{{title}}</panel-heading>{{/title}}<panel-body>{{yield}}</panel-body>{{#footer}}<panel-footer>{{footer}}</panel-footer>{{/footer}}</panel-custom>"
+})
+Ractive.components['panel-custom'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'default' },
+	template: "<div class='panel panel-{{type}}' hidden='{{hidden}}'>{{yield}}</div>"
+})
+Ractive.components['panel-heading'] = Ractive.extend({isolated: true, template: "<div class='panel-heading'>{{yield}}</div>"})
+Ractive.components['panel-body'] = Ractive.extend({isolated: true, template: "<div class='panel-body'>{{yield}}</div>"})
+Ractive.components['panel-footer'] = Ractive.extend({isolated: true, template: "<div class='panel-footer'>{{yield}}</div>"})
 
 
 /* Tables */
