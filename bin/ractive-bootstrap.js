@@ -1,4 +1,12 @@
 
+/* Alerts */
+
+Ractive.components['alert'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'info' },
+	template: "<div id='{{id}}' hidden='{{hidden}}' class='alert alert-{{type}} {{#closable}}alert-dismissible{{/closable}}'>{{#closable}}<button type='button' class='close' data-dismiss='alert'>&times;</button>{{/closable}}{{yield}}</div>"
+})
+
 
 /* Button groups */
 
@@ -104,267 +112,281 @@ Ractive.components['col-lg-10'] = Ractive.extend({isolated: true, template: "<di
 Ractive.components['col-lg-11'] = Ractive.extend({isolated: true, template: "<div class='col-lg-11'>{{yield}}</div>"})
 Ractive.components['col-lg-12'] = Ractive.extend({isolated: true, template: "<div class='col-lg-12'>{{yield}}</div>"})
 
-Ractive.components['icon'] = Ractive.extend({template: "<span class='glyphicon glyphicon-{{name}}' aria-hidden='true'></span>"})
-Ractive.components['icon-asterisk'] = Ractive.extend({template: "<span class='glyphicon glyphicon-asterisk' aria-hidden='true'></span>"})
-Ractive.components['icon-plus'] = Ractive.extend({template: "<span class='glyphicon glyphicon-plus' aria-hidden='true'></span>"})
-Ractive.components['icon-euro'] = Ractive.extend({template: "<span class='glyphicon glyphicon-euro' aria-hidden='true'></span>"})
-Ractive.components['icon-eur'] = Ractive.extend({template: "<span class='glyphicon glyphicon-eur' aria-hidden='true'></span>"})
-Ractive.components['icon-minus'] = Ractive.extend({template: "<span class='glyphicon glyphicon-minus' aria-hidden='true'></span>"})
-Ractive.components['icon-cloud'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cloud' aria-hidden='true'></span>"})
-Ractive.components['icon-envelope'] = Ractive.extend({template: "<span class='glyphicon glyphicon-envelope' aria-hidden='true'></span>"})
-Ractive.components['icon-pencil'] = Ractive.extend({template: "<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>"})
-Ractive.components['icon-glass'] = Ractive.extend({template: "<span class='glyphicon glyphicon-glass' aria-hidden='true'></span>"})
-Ractive.components['icon-music'] = Ractive.extend({template: "<span class='glyphicon glyphicon-music' aria-hidden='true'></span>"})
-Ractive.components['icon-search'] = Ractive.extend({template: "<span class='glyphicon glyphicon-search' aria-hidden='true'></span>"})
-Ractive.components['icon-heart'] = Ractive.extend({template: "<span class='glyphicon glyphicon-heart' aria-hidden='true'></span>"})
-Ractive.components['icon-star'] = Ractive.extend({template: "<span class='glyphicon glyphicon-star' aria-hidden='true'></span>"})
-Ractive.components['icon-star-empty'] = Ractive.extend({template: "<span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span>"})
-Ractive.components['icon-user'] = Ractive.extend({template: "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>"})
-Ractive.components['icon-film'] = Ractive.extend({template: "<span class='glyphicon glyphicon-film' aria-hidden='true'></span>"})
-Ractive.components['icon-th-large'] = Ractive.extend({template: "<span class='glyphicon glyphicon-th-large' aria-hidden='true'></span>"})
-Ractive.components['icon-th'] = Ractive.extend({template: "<span class='glyphicon glyphicon-th' aria-hidden='true'></span>"})
-Ractive.components['icon-th-list'] = Ractive.extend({template: "<span class='glyphicon glyphicon-th-list' aria-hidden='true'></span>"})
-Ractive.components['icon-ok'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ok' aria-hidden='true'></span>"})
-Ractive.components['icon-remove'] = Ractive.extend({template: "<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>"})
-Ractive.components['icon-zoom-in'] = Ractive.extend({template: "<span class='glyphicon glyphicon-zoom-in' aria-hidden='true'></span>"})
-Ractive.components['icon-zoom-out'] = Ractive.extend({template: "<span class='glyphicon glyphicon-zoom-out' aria-hidden='true'></span>"})
-Ractive.components['icon-off'] = Ractive.extend({template: "<span class='glyphicon glyphicon-off' aria-hidden='true'></span>"})
-Ractive.components['icon-signal'] = Ractive.extend({template: "<span class='glyphicon glyphicon-signal' aria-hidden='true'></span>"})
-Ractive.components['icon-cog'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cog' aria-hidden='true'></span>"})
-Ractive.components['icon-trash'] = Ractive.extend({template: "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>"})
-Ractive.components['icon-home'] = Ractive.extend({template: "<span class='glyphicon glyphicon-home' aria-hidden='true'></span>"})
-Ractive.components['icon-file'] = Ractive.extend({template: "<span class='glyphicon glyphicon-file' aria-hidden='true'></span>"})
-Ractive.components['icon-time'] = Ractive.extend({template: "<span class='glyphicon glyphicon-time' aria-hidden='true'></span>"})
-Ractive.components['icon-road'] = Ractive.extend({template: "<span class='glyphicon glyphicon-road' aria-hidden='true'></span>"})
-Ractive.components['icon-download-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-download-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-download'] = Ractive.extend({template: "<span class='glyphicon glyphicon-download' aria-hidden='true'></span>"})
-Ractive.components['icon-upload'] = Ractive.extend({template: "<span class='glyphicon glyphicon-upload' aria-hidden='true'></span>"})
-Ractive.components['icon-inbox'] = Ractive.extend({template: "<span class='glyphicon glyphicon-inbox' aria-hidden='true'></span>"})
-Ractive.components['icon-play-circle'] = Ractive.extend({template: "<span class='glyphicon glyphicon-play-circle' aria-hidden='true'></span>"})
-Ractive.components['icon-repeat'] = Ractive.extend({template: "<span class='glyphicon glyphicon-repeat' aria-hidden='true'></span>"})
-Ractive.components['icon-refresh'] = Ractive.extend({template: "<span class='glyphicon glyphicon-refresh' aria-hidden='true'></span>"})
-Ractive.components['icon-list-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-lock'] = Ractive.extend({template: "<span class='glyphicon glyphicon-lock' aria-hidden='true'></span>"})
-Ractive.components['icon-flag'] = Ractive.extend({template: "<span class='glyphicon glyphicon-flag' aria-hidden='true'></span>"})
-Ractive.components['icon-headphones'] = Ractive.extend({template: "<span class='glyphicon glyphicon-headphones' aria-hidden='true'></span>"})
-Ractive.components['icon-volume-off'] = Ractive.extend({template: "<span class='glyphicon glyphicon-volume-off' aria-hidden='true'></span>"})
-Ractive.components['icon-volume-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-volume-down' aria-hidden='true'></span>"})
-Ractive.components['icon-volume-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-volume-up' aria-hidden='true'></span>"})
-Ractive.components['icon-qrcode'] = Ractive.extend({template: "<span class='glyphicon glyphicon-qrcode' aria-hidden='true'></span>"})
-Ractive.components['icon-barcode'] = Ractive.extend({template: "<span class='glyphicon glyphicon-barcode' aria-hidden='true'></span>"})
-Ractive.components['icon-tag'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tag' aria-hidden='true'></span>"})
-Ractive.components['icon-tags'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tags' aria-hidden='true'></span>"})
-Ractive.components['icon-book'] = Ractive.extend({template: "<span class='glyphicon glyphicon-book' aria-hidden='true'></span>"})
-Ractive.components['icon-bookmark'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bookmark' aria-hidden='true'></span>"})
-Ractive.components['icon-print'] = Ractive.extend({template: "<span class='glyphicon glyphicon-print' aria-hidden='true'></span>"})
-Ractive.components['icon-camera'] = Ractive.extend({template: "<span class='glyphicon glyphicon-camera' aria-hidden='true'></span>"})
-Ractive.components['icon-font'] = Ractive.extend({template: "<span class='glyphicon glyphicon-font' aria-hidden='true'></span>"})
-Ractive.components['icon-bold'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bold' aria-hidden='true'></span>"})
-Ractive.components['icon-italic'] = Ractive.extend({template: "<span class='glyphicon glyphicon-italic' aria-hidden='true'></span>"})
-Ractive.components['icon-text-height'] = Ractive.extend({template: "<span class='glyphicon glyphicon-text-height' aria-hidden='true'></span>"})
-Ractive.components['icon-text-width'] = Ractive.extend({template: "<span class='glyphicon glyphicon-text-width' aria-hidden='true'></span>"})
-Ractive.components['icon-align-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-align-left' aria-hidden='true'></span>"})
-Ractive.components['icon-align-center'] = Ractive.extend({template: "<span class='glyphicon glyphicon-align-center' aria-hidden='true'></span>"})
-Ractive.components['icon-align-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-align-right' aria-hidden='true'></span>"})
-Ractive.components['icon-align-justify'] = Ractive.extend({template: "<span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span>"})
-Ractive.components['icon-list'] = Ractive.extend({template: "<span class='glyphicon glyphicon-list' aria-hidden='true'></span>"})
-Ractive.components['icon-indent-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-indent-left' aria-hidden='true'></span>"})
-Ractive.components['icon-indent-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-indent-right' aria-hidden='true'></span>"})
-Ractive.components['icon-facetime-video'] = Ractive.extend({template: "<span class='glyphicon glyphicon-facetime-video' aria-hidden='true'></span>"})
-Ractive.components['icon-picture'] = Ractive.extend({template: "<span class='glyphicon glyphicon-picture' aria-hidden='true'></span>"})
-Ractive.components['icon-map-marker'] = Ractive.extend({template: "<span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span>"})
-Ractive.components['icon-adjust'] = Ractive.extend({template: "<span class='glyphicon glyphicon-adjust' aria-hidden='true'></span>"})
-Ractive.components['icon-tint'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tint' aria-hidden='true'></span>"})
-Ractive.components['icon-edit'] = Ractive.extend({template: "<span class='glyphicon glyphicon-edit' aria-hidden='true'></span>"})
-Ractive.components['icon-share'] = Ractive.extend({template: "<span class='glyphicon glyphicon-share' aria-hidden='true'></span>"})
-Ractive.components['icon-check'] = Ractive.extend({template: "<span class='glyphicon glyphicon-check' aria-hidden='true'></span>"})
-Ractive.components['icon-move'] = Ractive.extend({template: "<span class='glyphicon glyphicon-move' aria-hidden='true'></span>"})
-Ractive.components['icon-step-backward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-step-backward' aria-hidden='true'></span>"})
-Ractive.components['icon-fast-backward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-fast-backward' aria-hidden='true'></span>"})
-Ractive.components['icon-backward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-backward' aria-hidden='true'></span>"})
-Ractive.components['icon-play'] = Ractive.extend({template: "<span class='glyphicon glyphicon-play' aria-hidden='true'></span>"})
-Ractive.components['icon-pause'] = Ractive.extend({template: "<span class='glyphicon glyphicon-pause' aria-hidden='true'></span>"})
-Ractive.components['icon-stop'] = Ractive.extend({template: "<span class='glyphicon glyphicon-stop' aria-hidden='true'></span>"})
-Ractive.components['icon-forward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-forward' aria-hidden='true'></span>"})
-Ractive.components['icon-fast-forward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-fast-forward' aria-hidden='true'></span>"})
-Ractive.components['icon-step-forward'] = Ractive.extend({template: "<span class='glyphicon glyphicon-step-forward' aria-hidden='true'></span>"})
-Ractive.components['icon-eject'] = Ractive.extend({template: "<span class='glyphicon glyphicon-eject' aria-hidden='true'></span>"})
-Ractive.components['icon-chevron-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span>"})
-Ractive.components['icon-chevron-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span>"})
-Ractive.components['icon-plus-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-plus-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-minus-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-minus-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-remove-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-remove-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-ok-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-question-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-question-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-info-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-screenshot'] = Ractive.extend({template: "<span class='glyphicon glyphicon-screenshot' aria-hidden='true'></span>"})
-Ractive.components['icon-remove-circle'] = Ractive.extend({template: "<span class='glyphicon glyphicon-remove-circle' aria-hidden='true'></span>"})
-Ractive.components['icon-ok-circle'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ok-circle' aria-hidden='true'></span>"})
-Ractive.components['icon-ban-circle'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ban-circle' aria-hidden='true'></span>"})
-Ractive.components['icon-arrow-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-arrow-left' aria-hidden='true'></span>"})
-Ractive.components['icon-arrow-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-arrow-right' aria-hidden='true'></span>"})
-Ractive.components['icon-arrow-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-arrow-up' aria-hidden='true'></span>"})
-Ractive.components['icon-arrow-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-arrow-down' aria-hidden='true'></span>"})
-Ractive.components['icon-share-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-share-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-resize-full'] = Ractive.extend({template: "<span class='glyphicon glyphicon-resize-full' aria-hidden='true'></span>"})
-Ractive.components['icon-resize-small'] = Ractive.extend({template: "<span class='glyphicon glyphicon-resize-small' aria-hidden='true'></span>"})
-Ractive.components['icon-exclamation-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-gift'] = Ractive.extend({template: "<span class='glyphicon glyphicon-gift' aria-hidden='true'></span>"})
-Ractive.components['icon-leaf'] = Ractive.extend({template: "<span class='glyphicon glyphicon-leaf' aria-hidden='true'></span>"})
-Ractive.components['icon-fire'] = Ractive.extend({template: "<span class='glyphicon glyphicon-fire' aria-hidden='true'></span>"})
-Ractive.components['icon-eye-open'] = Ractive.extend({template: "<span class='glyphicon glyphicon-eye-open' aria-hidden='true'></span>"})
-Ractive.components['icon-eye-close'] = Ractive.extend({template: "<span class='glyphicon glyphicon-eye-close' aria-hidden='true'></span>"})
-Ractive.components['icon-warning-sign'] = Ractive.extend({template: "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span>"})
-Ractive.components['icon-plane'] = Ractive.extend({template: "<span class='glyphicon glyphicon-plane' aria-hidden='true'></span>"})
-Ractive.components['icon-calendar'] = Ractive.extend({template: "<span class='glyphicon glyphicon-calendar' aria-hidden='true'></span>"})
-Ractive.components['icon-random'] = Ractive.extend({template: "<span class='glyphicon glyphicon-random' aria-hidden='true'></span>"})
-Ractive.components['icon-comment'] = Ractive.extend({template: "<span class='glyphicon glyphicon-comment' aria-hidden='true'></span>"})
-Ractive.components['icon-magnet'] = Ractive.extend({template: "<span class='glyphicon glyphicon-magnet' aria-hidden='true'></span>"})
-Ractive.components['icon-chevron-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span>"})
-Ractive.components['icon-chevron-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span>"})
-Ractive.components['icon-retweet'] = Ractive.extend({template: "<span class='glyphicon glyphicon-retweet' aria-hidden='true'></span>"})
-Ractive.components['icon-shopping-cart'] = Ractive.extend({template: "<span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span>"})
-Ractive.components['icon-folder-close'] = Ractive.extend({template: "<span class='glyphicon glyphicon-folder-close' aria-hidden='true'></span>"})
-Ractive.components['icon-folder-open'] = Ractive.extend({template: "<span class='glyphicon glyphicon-folder-open' aria-hidden='true'></span>"})
-Ractive.components['icon-resize-vertical'] = Ractive.extend({template: "<span class='glyphicon glyphicon-resize-vertical' aria-hidden='true'></span>"})
-Ractive.components['icon-resize-horizontal'] = Ractive.extend({template: "<span class='glyphicon glyphicon-resize-horizontal' aria-hidden='true'></span>"})
-Ractive.components['icon-hdd'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hdd' aria-hidden='true'></span>"})
-Ractive.components['icon-bullhorn'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bullhorn' aria-hidden='true'></span>"})
-Ractive.components['icon-bell'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bell' aria-hidden='true'></span>"})
-Ractive.components['icon-certificate'] = Ractive.extend({template: "<span class='glyphicon glyphicon-certificate' aria-hidden='true'></span>"})
-Ractive.components['icon-thumbs-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span>"})
-Ractive.components['icon-thumbs-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-thumbs-down' aria-hidden='true'></span>"})
-Ractive.components['icon-hand-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hand-right' aria-hidden='true'></span>"})
-Ractive.components['icon-hand-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hand-left' aria-hidden='true'></span>"})
-Ractive.components['icon-hand-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hand-up' aria-hidden='true'></span>"})
-Ractive.components['icon-hand-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hand-down' aria-hidden='true'></span>"})
-Ractive.components['icon-circle-arrow-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-circle-arrow-right' aria-hidden='true'></span>"})
-Ractive.components['icon-circle-arrow-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-circle-arrow-left' aria-hidden='true'></span>"})
-Ractive.components['icon-circle-arrow-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-circle-arrow-up' aria-hidden='true'></span>"})
-Ractive.components['icon-circle-arrow-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-circle-arrow-down' aria-hidden='true'></span>"})
-Ractive.components['icon-globe'] = Ractive.extend({template: "<span class='glyphicon glyphicon-globe' aria-hidden='true'></span>"})
-Ractive.components['icon-wrench'] = Ractive.extend({template: "<span class='glyphicon glyphicon-wrench' aria-hidden='true'></span>"})
-Ractive.components['icon-tasks'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tasks' aria-hidden='true'></span>"})
-Ractive.components['icon-filter'] = Ractive.extend({template: "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span>"})
-Ractive.components['icon-briefcase'] = Ractive.extend({template: "<span class='glyphicon glyphicon-briefcase' aria-hidden='true'></span>"})
-Ractive.components['icon-fullscreen'] = Ractive.extend({template: "<span class='glyphicon glyphicon-fullscreen' aria-hidden='true'></span>"})
-Ractive.components['icon-dashboard'] = Ractive.extend({template: "<span class='glyphicon glyphicon-dashboard' aria-hidden='true'></span>"})
-Ractive.components['icon-paperclip'] = Ractive.extend({template: "<span class='glyphicon glyphicon-paperclip' aria-hidden='true'></span>"})
-Ractive.components['icon-heart-empty'] = Ractive.extend({template: "<span class='glyphicon glyphicon-heart-empty' aria-hidden='true'></span>"})
-Ractive.components['icon-link'] = Ractive.extend({template: "<span class='glyphicon glyphicon-link' aria-hidden='true'></span>"})
-Ractive.components['icon-phone'] = Ractive.extend({template: "<span class='glyphicon glyphicon-phone' aria-hidden='true'></span>"})
-Ractive.components['icon-pushpin'] = Ractive.extend({template: "<span class='glyphicon glyphicon-pushpin' aria-hidden='true'></span>"})
-Ractive.components['icon-usd'] = Ractive.extend({template: "<span class='glyphicon glyphicon-usd' aria-hidden='true'></span>"})
-Ractive.components['icon-gbp'] = Ractive.extend({template: "<span class='glyphicon glyphicon-gbp' aria-hidden='true'></span>"})
-Ractive.components['icon-sort'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-alphabet'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-alphabet' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-alphabet-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-alphabet-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-order'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-order' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-order-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-order-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-attributes'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-attributes' aria-hidden='true'></span>"})
-Ractive.components['icon-sort-by-attributes-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sort-by-attributes-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-unchecked'] = Ractive.extend({template: "<span class='glyphicon glyphicon-unchecked' aria-hidden='true'></span>"})
-Ractive.components['icon-expand'] = Ractive.extend({template: "<span class='glyphicon glyphicon-expand' aria-hidden='true'></span>"})
-Ractive.components['icon-collapse-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-collapse-down' aria-hidden='true'></span>"})
-Ractive.components['icon-collapse-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-collapse-up' aria-hidden='true'></span>"})
-Ractive.components['icon-log-in'] = Ractive.extend({template: "<span class='glyphicon glyphicon-log-in' aria-hidden='true'></span>"})
-Ractive.components['icon-flash'] = Ractive.extend({template: "<span class='glyphicon glyphicon-flash' aria-hidden='true'></span>"})
-Ractive.components['icon-log-out'] = Ractive.extend({template: "<span class='glyphicon glyphicon-log-out' aria-hidden='true'></span>"})
-Ractive.components['icon-new-window'] = Ractive.extend({template: "<span class='glyphicon glyphicon-new-window' aria-hidden='true'></span>"})
-Ractive.components['icon-record'] = Ractive.extend({template: "<span class='glyphicon glyphicon-record' aria-hidden='true'></span>"})
-Ractive.components['icon-save'] = Ractive.extend({template: "<span class='glyphicon glyphicon-save' aria-hidden='true'></span>"})
-Ractive.components['icon-open'] = Ractive.extend({template: "<span class='glyphicon glyphicon-open' aria-hidden='true'></span>"})
-Ractive.components['icon-saved'] = Ractive.extend({template: "<span class='glyphicon glyphicon-saved' aria-hidden='true'></span>"})
-Ractive.components['icon-import'] = Ractive.extend({template: "<span class='glyphicon glyphicon-import' aria-hidden='true'></span>"})
-Ractive.components['icon-export'] = Ractive.extend({template: "<span class='glyphicon glyphicon-export' aria-hidden='true'></span>"})
-Ractive.components['icon-send'] = Ractive.extend({template: "<span class='glyphicon glyphicon-send' aria-hidden='true'></span>"})
-Ractive.components['icon-floppy-disk'] = Ractive.extend({template: "<span class='glyphicon glyphicon-floppy-disk' aria-hidden='true'></span>"})
-Ractive.components['icon-floppy-saved'] = Ractive.extend({template: "<span class='glyphicon glyphicon-floppy-saved' aria-hidden='true'></span>"})
-Ractive.components['icon-floppy-remove'] = Ractive.extend({template: "<span class='glyphicon glyphicon-floppy-remove' aria-hidden='true'></span>"})
-Ractive.components['icon-floppy-save'] = Ractive.extend({template: "<span class='glyphicon glyphicon-floppy-save' aria-hidden='true'></span>"})
-Ractive.components['icon-floppy-open'] = Ractive.extend({template: "<span class='glyphicon glyphicon-floppy-open' aria-hidden='true'></span>"})
-Ractive.components['icon-credit-card'] = Ractive.extend({template: "<span class='glyphicon glyphicon-credit-card' aria-hidden='true'></span>"})
-Ractive.components['icon-transfer'] = Ractive.extend({template: "<span class='glyphicon glyphicon-transfer' aria-hidden='true'></span>"})
-Ractive.components['icon-cutlery'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cutlery' aria-hidden='true'></span>"})
-Ractive.components['icon-header'] = Ractive.extend({template: "<span class='glyphicon glyphicon-header' aria-hidden='true'></span>"})
-Ractive.components['icon-compressed'] = Ractive.extend({template: "<span class='glyphicon glyphicon-compressed' aria-hidden='true'></span>"})
-Ractive.components['icon-earphone'] = Ractive.extend({template: "<span class='glyphicon glyphicon-earphone' aria-hidden='true'></span>"})
-Ractive.components['icon-phone-alt'] = Ractive.extend({template: "<span class='glyphicon glyphicon-phone-alt' aria-hidden='true'></span>"})
-Ractive.components['icon-tower'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tower' aria-hidden='true'></span>"})
-Ractive.components['icon-stats'] = Ractive.extend({template: "<span class='glyphicon glyphicon-stats' aria-hidden='true'></span>"})
-Ractive.components['icon-sd-video'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sd-video' aria-hidden='true'></span>"})
-Ractive.components['icon-hd-video'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hd-video' aria-hidden='true'></span>"})
-Ractive.components['icon-subtitles'] = Ractive.extend({template: "<span class='glyphicon glyphicon-subtitles' aria-hidden='true'></span>"})
-Ractive.components['icon-sound-stereo'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sound-stereo' aria-hidden='true'></span>"})
-Ractive.components['icon-sound-dolby'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sound-dolby' aria-hidden='true'></span>"})
-Ractive.components['icon-sound-5-1'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sound-5-1' aria-hidden='true'></span>"})
-Ractive.components['icon-sound-6-1'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sound-6-1' aria-hidden='true'></span>"})
-Ractive.components['icon-sound-7-1'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sound-7-1' aria-hidden='true'></span>"})
-Ractive.components['icon-copyright-mark'] = Ractive.extend({template: "<span class='glyphicon glyphicon-copyright-mark' aria-hidden='true'></span>"})
-Ractive.components['icon-registration-mark'] = Ractive.extend({template: "<span class='glyphicon glyphicon-registration-mark' aria-hidden='true'></span>"})
-Ractive.components['icon-cloud-download'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cloud-download' aria-hidden='true'></span>"})
-Ractive.components['icon-cloud-upload'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cloud-upload' aria-hidden='true'></span>"})
-Ractive.components['icon-tree-conifer'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tree-conifer' aria-hidden='true'></span>"})
-Ractive.components['icon-tree-deciduous'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tree-deciduous' aria-hidden='true'></span>"})
-Ractive.components['icon-cd'] = Ractive.extend({template: "<span class='glyphicon glyphicon-cd' aria-hidden='true'></span>"})
-Ractive.components['icon-save-file'] = Ractive.extend({template: "<span class='glyphicon glyphicon-save-file' aria-hidden='true'></span>"})
-Ractive.components['icon-open-file'] = Ractive.extend({template: "<span class='glyphicon glyphicon-open-file' aria-hidden='true'></span>"})
-Ractive.components['icon-level-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-level-up' aria-hidden='true'></span>"})
-Ractive.components['icon-copy'] = Ractive.extend({template: "<span class='glyphicon glyphicon-copy' aria-hidden='true'></span>"})
-Ractive.components['icon-paste'] = Ractive.extend({template: "<span class='glyphicon glyphicon-paste' aria-hidden='true'></span>"})
-Ractive.components['icon-alert'] = Ractive.extend({template: "<span class='glyphicon glyphicon-alert' aria-hidden='true'></span>"})
-Ractive.components['icon-equalizer'] = Ractive.extend({template: "<span class='glyphicon glyphicon-equalizer' aria-hidden='true'></span>"})
-Ractive.components['icon-king'] = Ractive.extend({template: "<span class='glyphicon glyphicon-king' aria-hidden='true'></span>"})
-Ractive.components['icon-queen'] = Ractive.extend({template: "<span class='glyphicon glyphicon-queen' aria-hidden='true'></span>"})
-Ractive.components['icon-pawn'] = Ractive.extend({template: "<span class='glyphicon glyphicon-pawn' aria-hidden='true'></span>"})
-Ractive.components['icon-bishop'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bishop' aria-hidden='true'></span>"})
-Ractive.components['icon-knight'] = Ractive.extend({template: "<span class='glyphicon glyphicon-knight' aria-hidden='true'></span>"})
-Ractive.components['icon-baby-formula'] = Ractive.extend({template: "<span class='glyphicon glyphicon-baby-formula' aria-hidden='true'></span>"})
-Ractive.components['icon-tent'] = Ractive.extend({template: "<span class='glyphicon glyphicon-tent' aria-hidden='true'></span>"})
-Ractive.components['icon-blackboard'] = Ractive.extend({template: "<span class='glyphicon glyphicon-blackboard' aria-hidden='true'></span>"})
-Ractive.components['icon-bed'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bed' aria-hidden='true'></span>"})
-Ractive.components['icon-apple'] = Ractive.extend({template: "<span class='glyphicon glyphicon-apple' aria-hidden='true'></span>"})
-Ractive.components['icon-erase'] = Ractive.extend({template: "<span class='glyphicon glyphicon-erase' aria-hidden='true'></span>"})
-Ractive.components['icon-hourglass'] = Ractive.extend({template: "<span class='glyphicon glyphicon-hourglass' aria-hidden='true'></span>"})
-Ractive.components['icon-lamp'] = Ractive.extend({template: "<span class='glyphicon glyphicon-lamp' aria-hidden='true'></span>"})
-Ractive.components['icon-duplicate'] = Ractive.extend({template: "<span class='glyphicon glyphicon-duplicate' aria-hidden='true'></span>"})
-Ractive.components['icon-piggy-bank'] = Ractive.extend({template: "<span class='glyphicon glyphicon-piggy-bank' aria-hidden='true'></span>"})
-Ractive.components['icon-scissors'] = Ractive.extend({template: "<span class='glyphicon glyphicon-scissors' aria-hidden='true'></span>"})
-Ractive.components['icon-bitcoin'] = Ractive.extend({template: "<span class='glyphicon glyphicon-bitcoin' aria-hidden='true'></span>"})
-Ractive.components['icon-yen'] = Ractive.extend({template: "<span class='glyphicon glyphicon-yen' aria-hidden='true'></span>"})
-Ractive.components['icon-ruble'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ruble' aria-hidden='true'></span>"})
-Ractive.components['icon-scale'] = Ractive.extend({template: "<span class='glyphicon glyphicon-scale' aria-hidden='true'></span>"})
-Ractive.components['icon-ice-lolly'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ice-lolly' aria-hidden='true'></span>"})
-Ractive.components['icon-ice-lolly-tasted'] = Ractive.extend({template: "<span class='glyphicon glyphicon-ice-lolly-tasted' aria-hidden='true'></span>"})
-Ractive.components['icon-education'] = Ractive.extend({template: "<span class='glyphicon glyphicon-education' aria-hidden='true'></span>"})
-Ractive.components['icon-option-horizontal'] = Ractive.extend({template: "<span class='glyphicon glyphicon-option-horizontal' aria-hidden='true'></span>"})
-Ractive.components['icon-option-vertical'] = Ractive.extend({template: "<span class='glyphicon glyphicon-option-vertical' aria-hidden='true'></span>"})
-Ractive.components['icon-menu-hamburger'] = Ractive.extend({template: "<span class='glyphicon glyphicon-menu-hamburger' aria-hidden='true'></span>"})
-Ractive.components['icon-modal-window'] = Ractive.extend({template: "<span class='glyphicon glyphicon-modal-window' aria-hidden='true'></span>"})
-Ractive.components['icon-oil'] = Ractive.extend({template: "<span class='glyphicon glyphicon-oil' aria-hidden='true'></span>"})
-Ractive.components['icon-grain'] = Ractive.extend({template: "<span class='glyphicon glyphicon-grain' aria-hidden='true'></span>"})
-Ractive.components['icon-sunglasses'] = Ractive.extend({template: "<span class='glyphicon glyphicon-sunglasses' aria-hidden='true'></span>"})
-Ractive.components['icon-text-size'] = Ractive.extend({template: "<span class='glyphicon glyphicon-text-size' aria-hidden='true'></span>"})
-Ractive.components['icon-text-color'] = Ractive.extend({template: "<span class='glyphicon glyphicon-text-color' aria-hidden='true'></span>"})
-Ractive.components['icon-text-background'] = Ractive.extend({template: "<span class='glyphicon glyphicon-text-background' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-top'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-top' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-bottom'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-bottom' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-horizontal'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-horizontal' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-left' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-vertical'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-vertical' aria-hidden='true'></span>"})
-Ractive.components['icon-object-align-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-object-align-right' aria-hidden='true'></span>"})
-Ractive.components['icon-triangle-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-triangle-right' aria-hidden='true'></span>"})
-Ractive.components['icon-triangle-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span>"})
-Ractive.components['icon-triangle-bottom'] = Ractive.extend({template: "<span class='glyphicon glyphicon-triangle-bottom' aria-hidden='true'></span>"})
-Ractive.components['icon-triangle-top'] = Ractive.extend({template: "<span class='glyphicon glyphicon-triangle-top' aria-hidden='true'></span>"})
-Ractive.components['icon-console'] = Ractive.extend({template: "<span class='glyphicon glyphicon-console' aria-hidden='true'></span>"})
-Ractive.components['icon-superscript'] = Ractive.extend({template: "<span class='glyphicon glyphicon-superscript' aria-hidden='true'></span>"})
-Ractive.components['icon-subscript'] = Ractive.extend({template: "<span class='glyphicon glyphicon-subscript' aria-hidden='true'></span>"})
-Ractive.components['icon-menu-left'] = Ractive.extend({template: "<span class='glyphicon glyphicon-menu-left' aria-hidden='true'></span>"})
-Ractive.components['icon-menu-right'] = Ractive.extend({template: "<span class='glyphicon glyphicon-menu-right' aria-hidden='true'></span>"})
-Ractive.components['icon-menu-down'] = Ractive.extend({template: "<span class='glyphicon glyphicon-menu-down' aria-hidden='true'></span>"})
-Ractive.components['icon-menu-up'] = Ractive.extend({template: "<span class='glyphicon glyphicon-menu-up' aria-hidden='true'></span>"})
 
+/* Glyphicons */
+
+var icons = [
+	"asterisk",
+	"plus",
+	"euro",
+	"eur",
+	"minus",
+	"cloud",
+	"envelope",
+	"pencil",
+	"glass",
+	"music",
+	"search",
+	"heart",
+	"star",
+	"star-empty",
+	"user",
+	"film",
+	"th-large",
+	"th",
+	"th-list",
+	"ok",
+	"remove",
+	"zoom-in",
+	"zoom-out",
+	"off",
+	"signal",
+	"cog",
+	"trash",
+	"home",
+	"file",
+	"time",
+	"road",
+	"download-alt",
+	"download",
+	"upload",
+	"inbox",
+	"play-circle",
+	"repeat",
+	"refresh",
+	"list-alt",
+	"lock",
+	"flag",
+	"headphones",
+	"volume-off",
+	"volume-down",
+	"volume-up",
+	"qrcode",
+	"barcode",
+	"tag",
+	"tags",
+	"book",
+	"bookmark",
+	"print",
+	"camera",
+	"font",
+	"bold",
+	"italic",
+	"text-height",
+	"text-width",
+	"align-left",
+	"align-center",
+	"align-right",
+	"align-justify",
+	"list",
+	"indent-left",
+	"indent-right",
+	"facetime-video",
+	"picture",
+	"map-marker",
+	"adjust",
+	"tint",
+	"edit",
+	"share",
+	"check",
+	"move",
+	"step-backward",
+	"fast-backward",
+	"backward",
+	"play",
+	"pause",
+	"stop",
+	"forward",
+	"fast-forward",
+	"step-forward",
+	"eject",
+	"chevron-left",
+	"chevron-right",
+	"plus-sign",
+	"minus-sign",
+	"remove-sign",
+	"ok-sign",
+	"question-sign",
+	"info-sign",
+	"screenshot",
+	"remove-circle",
+	"ok-circle",
+	"ban-circle",
+	"arrow-left",
+	"arrow-right",
+	"arrow-up",
+	"arrow-down",
+	"share-alt",
+	"resize-full",
+	"resize-small",
+	"exclamation-sign",
+	"gift",
+	"leaf",
+	"fire",
+	"eye-open",
+	"eye-close",
+	"warning-sign",
+	"plane",
+	"calendar",
+	"random",
+	"comment",
+	"magnet",
+	"chevron-up",
+	"chevron-down",
+	"retweet",
+	"shopping-cart",
+	"folder-close",
+	"folder-open",
+	"resize-vertical",
+	"resize-horizontal",
+	"hdd",
+	"bullhorn",
+	"bell",
+	"certificate",
+	"thumbs-up",
+	"thumbs-down",
+	"hand-right",
+	"hand-left",
+	"hand-up",
+	"hand-down",
+	"circle-arrow-right",
+	"circle-arrow-left",
+	"circle-arrow-up",
+	"circle-arrow-down",
+	"globe",
+	"wrench",
+	"tasks",
+	"filter",
+	"briefcase",
+	"fullscreen",
+	"dashboard",
+	"paperclip",
+	"heart-empty",
+	"link",
+	"phone",
+	"pushpin",
+	"usd",
+	"gbp",
+	"sort",
+	"sort-by-alphabet",
+	"sort-by-alphabet-alt",
+	"sort-by-order",
+	"sort-by-order-alt",
+	"sort-by-attributes",
+	"sort-by-attributes-alt",
+	"unchecked",
+	"expand",
+	"collapse-down",
+	"collapse-up",
+	"log-in",
+	"flash",
+	"log-out",
+	"new-window",
+	"record",
+	"save",
+	"open",
+	"saved",
+	"import",
+	"export",
+	"send",
+	"floppy-disk",
+	"floppy-saved",
+	"floppy-remove",
+	"floppy-save",
+	"floppy-open",
+	"credit-card",
+	"transfer",
+	"cutlery",
+	"header",
+	"compressed",
+	"earphone",
+	"phone-alt",
+	"tower",
+	"stats",
+	"sd-video",
+	"hd-video",
+	"subtitles",
+	"sound-stereo",
+	"sound-dolby",
+	"sound-5-1",
+	"sound-6-1",
+	"sound-7-1",
+	"copyright-mark",
+	"registration-mark",
+	"cloud-download",
+	"cloud-upload",
+	"tree-conifer",
+	"tree-deciduous",
+	"cd",
+	"save-file",
+	"open-file",
+	"level-up",
+	"copy",
+	"paste",
+	"alert",
+	"equalizer",
+	"king",
+	"queen",
+	"pawn",
+	"bishop",
+	"knight",
+	"baby-formula",
+	"tent",
+	"blackboard",
+	"bed",
+	"apple",
+	"erase",
+	"hourglass",
+	"lamp",
+	"duplicate",
+	"piggy-bank",
+	"scissors",
+	"bitcoin",
+	"btc",
+	"xbt",
+	"yen",
+	"jpy",
+	"ruble",
+	"rub",
+	"scale",
+	"ice-lolly",
+	"ice-lolly-tasted",
+	"education",
+	"option-horizontal",
+	"option-vertical",
+	"menu-hamburger",
+	"modal-window",
+	"oil",
+	"grain",
+	"sunglasses",
+	"text-size",
+	"text-color",
+	"text-background",
+	"object-align-top",
+	"object-align-bottom",
+	"object-align-horizontal",
+	"object-align-left",
+	"object-align-vertical",
+	"object-align-right",
+	"triangle-right",
+	"triangle-left",
+	"triangle-bottom",
+	"triangle-top",
+	"console",
+	"superscript",
+	"subscript",
+	"menu-left",
+	"menu-right",
+	"menu-down",
+	"menu-up"
+]
+
+Ractive.components['icon'] = Ractive.extend({template: "<span class='glyphicon glyphicon-{{name}}' aria-hidden='true'></span>"})
+for( var i in icons ) {
+	Ractive.components['icon-' + icons[i]] = Ractive.extend({template: "<icon/>", data: {name: icons[i]}})
+}
+
+icons = undefined
 
 /* Input groups */
 
@@ -373,6 +395,122 @@ Ractive.components['ig-addon'] = Ractive.extend({isolated: true, template: "<spa
 Ractive.components['ig-btn'] = Ractive.extend({isolated: true, template: "<span class='input-group-btn'>{{yield}}</span>"})
 
 
+
+/* Jumbotron & Page header */
+
+Ractive.components['jumbotron'] = Ractive.extend({isolated: true, template: "<div class='jumbotron'>{{yield}}</div>"})
+Ractive.components['page-header'] = Ractive.extend({isolated: true, template: "<div class='page-header'>{{yield}}</div>"})
+
+
+/* Modals */
+
+Ractive.components['modal'] = Ractive.extend({
+	isolated: true,
+	data: {
+		cancel: "Cancel",
+		save: "Save"
+	},
+	template: 
+		"<modal-custom id='{{id}}' onshow='{{onshow}}' onclose='{{onclose}}' type='{{type}}' >" +
+			"<modal-header>" +
+				"<modal-close/>" +
+				"<h4 class='modal-title'>{{title}}</h4>" +
+			"</modal-header>" +
+			"<modal-body>" +
+				"{{yield}}" +
+			"</modal-body>" +
+			"<modal-footer>" +
+				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
+				"{{#save}}<button class='btn btn-primary' onclick='{{onsave}}'>{{save}}</button>{{/save}}" +
+			"</modal-footer>" +
+	"</modal-custom>"
+})
+
+Ractive.components['modal-custom'] = Ractive.extend({
+	isolated: true,
+	data: {
+		keyboard: true,
+		backdrop: true
+	},
+	template: "<div class='modal fade' id='{{id}}' tabindex='-1' role='dialog' aria-hidden='true' data-backdrop='{{backdrop}}' data-keyboard='{{keyboard}}'><div class='modal-dialog {{#type}}modal-{{type}}{{/}}'><div class='modal-content'>{{yield}}</div></div></div>",
+	onrender: function() {
+		var elem = this.find('*')
+		
+		var onclose = this.get('onclose')
+		if( onclose ) {
+			$(elem).bind('hide.bs.modal', function(event) {
+				eval(onclose) // jshint ignore:line
+			})
+		}
+		
+		var onshow = this.get('onshow')
+		if( onshow ) {
+			$(elem).bind('show.bs.modal', function(event) {
+				eval(onshow) // jshint ignore:line
+			})
+		}
+	}
+})
+
+Ractive.components['modal-header'] = Ractive.extend({
+	isolated: true,
+	template: "<div class='modal-header'>{{yield}}</div>"
+})
+
+Ractive.components['modal-body'] = Ractive.extend({
+	isolated: true,
+	template: "<div class='modal-body'>{{yield}}</div>"
+})
+     
+Ractive.components['modal-footer'] = Ractive.extend({
+	isolated: true,
+	template: "<div class='modal-footer'>{{yield}}</div>"
+})
+
+Ractive.components['modal-close'] = Ractive.extend({
+	isolated: true,
+	template: "<button type='button' class='close' aria-label='Close' data-dismiss='modal'><span aria-hidden='true'>&times;</span></button>"
+})
+
+
+/* Pagination */
+
+Ractive.components['pagination'] = Ractive.extend({
+	isolated: true,
+	data: {
+		min: 1,
+		max: 10,
+		value: 1
+	},
+	computed: {
+		pages: function() {
+			var min = this.get('min')
+			var max = this.get('max')
+			var list = []
+			for( var i = min; i <= max; i++ )
+				list.push(i)
+			return list
+		}
+	},
+	template: "<nav><ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul></nav>"
+})
+
+
+/* Panels */
+
+Ractive.components['panel'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'default' },
+	template: "<panel-custom type='{{type}}' hidden='{{hidden}}'>{{#title}}<panel-heading>{{#icon}}<icon name='{{icon}}'/> {{/icon}}{{title}}</panel-heading>{{/title}}<panel-body>{{yield}}</panel-body>{{#footer}}<panel-footer>{{footer}}</panel-footer>{{/footer}}</panel-custom>"
+})
+Ractive.components['panel-custom'] = Ractive.extend({
+	isolated: true,
+	data: { type: 'default' },
+	template: "<div class='panel panel-{{type}}' hidden='{{hidden}}'>{{yield}}</div>"
+})
+Ractive.components['panel-heading'] = Ractive.extend({isolated: true, template: "<div class='panel-heading'>{{yield}}</div>"})
+Ractive.components['panel-body'] = Ractive.extend({isolated: true, template: "<div class='panel-body'>{{yield}}</div>"})
+Ractive.components['panel-footer'] = Ractive.extend({isolated: true, template: "<div class='panel-footer'>{{yield}}</div>"})
 
 
 /* Tables */
@@ -412,3 +550,8 @@ Ractive.components['tab'] = Ractive.extend({
 })
 
 Ractive.components['pill'] = Ractive.components['tab'] // They are identical
+
+/* Tags & Badges */
+
+Ractive.components['tag'] = Ractive.extend({isolated: true, data: {type: 'default'}, template: "<span class='label label-{{type}}'>{{yield}}</span>"})
+Ractive.components['badge'] = Ractive.extend({isolated: true, template: "<span class='badge'>{{yield}}</span>"})

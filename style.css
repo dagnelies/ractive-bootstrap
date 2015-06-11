@@ -12,10 +12,20 @@ body > .container > h3 {
 	background-color: #729D34;
 	font-family: "Voltaire";
 	color: white;
-	margin: 20px 0px;
+	margin: 50px 0px 10px;
 }
 
 
 footer {
 	text-align: center;
 }
+
+.output {
+	max-height: 500px;
+	overflow-y: auto;
+}
+/*
+.CodeMirror {
+	height: 500px;
+}
+*/

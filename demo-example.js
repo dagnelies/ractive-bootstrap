@@ -9,7 +9,7 @@ Ractive.components['example'] = Ractive.extend({
 		{{#if error}}\
 		<pre class='alert alert-danger'>{{error}}</pre>\
 		{{/if}}\
-		<div class='output'></div>\
+		<div class='container-fluid output'></div>\
 	</col-md-6>\
 </row>\
 ",

@@ -1,0 +1,47 @@
+
+<modal id="simple_modal" title="Modal title">
+	One fine body...
+</modal>
+
+<modal id="small_modal" title="Small title" type="sm">
+	One fine body...
+</modal>
+
+<modal id="large_modal" title="Large title" type="lg">
+	One fine body...
+</modal>
+
+<modal id="events_modal" title="Modal title" onclose="alert('Closed!')" onsave="alert('Saved!')">
+	One fine body...
+</modal>
+
+
+<modal id="buttons_modal" title="Modal title" cancel="Woops, ignore that" save="Yeah, save that">
+	One fine body...
+</modal>
+
+<modal-custom id="custom_modal" backdrop="false" keyboard="false">
+	<modal-header>
+		<icon-star/> <i>Ho ho ho</i>
+	</modal-header>
+	<modal-body>
+		<p>As you see, there is no backdrop on this one due to <code>backdrop="false"</code>.
+		Alternatively, specify <code>backdrop="static"</code> for a backdrop which doesn't close the modal on click.</p>
+		<p>Also ESC doesn't work because of <code>keyboard="false"</code>.</p>
+		<p>Add <code>&lt;modal-close/&gt;</code> to add a closing button like this: <modal-close/></p>
+	</modal-body>
+	<modal-footer>
+		<btn type="primary block" onclick="$('#custom_modal').modal('hide')">Got it!</btn>
+	</modal-footer>
+</modal-custom>
+
+<btn-group-vertical>
+	<btn onclick="$('#small_modal').modal('show')">Small modal</btn>
+	<btn onclick="$('#simple_modal').modal('show')">Default modal</btn>
+	<btn onclick="$('#large_modal').modal('show')">Large modal</btn>
+</btn-group-vertical>
+<btn-group-vertical>
+	<btn onclick="$('#events_modal').modal('show')">Modal with events</btn>
+	<btn onclick="$('#buttons_modal').modal('show')">Modal with different buttons</btn>
+	<btn onclick="$('#custom_modal').modal('show')">Custom modal dialog</btn>
+</btn-group-vertical>
