@@ -52,6 +52,10 @@ Ractive.components['container-fluid'] = Ractive.extend({isolated: true, template
 
 Ractive.components['row'] = Ractive.extend({isolated: true, template: "<div class='row'>{{yield}}</div>"})
 
+/* Columns */
+
+Ractive.components['column'] = Ractive.extend({isolated: true, template: "<div class='{{#xs}}col-xs-{{xs}}{{/}} {{#sm}}col-sm-{{sm}}{{/}} {{#md}}col-md-{{md}}{{/}} {{#lg}}col-lg-{{lg}}{{/}}'>{{yield}}</div>"})
+
 /* Columns XS */
 
 Ractive.components['col-xs-1'] = Ractive.extend({isolated: true, template: "<div class='col-xs-1'>{{yield}}</div>"})
