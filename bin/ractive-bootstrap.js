@@ -15,12 +15,20 @@ Ractive.components['btn-group-justified'] = Ractive.extend({isolated: true, temp
 Ractive.components['btn-group-vertical'] = Ractive.extend({isolated: true, template: "<div class='btn-group-vertical {{#type}}btn-group-{{type}}{{/type}}'>{{yield}}</div>"})
 Ractive.components['btn-toolbar'] = Ractive.extend({isolated: true, template: "<div class='btn-toolbar'>{{yield}}</div>"})
 
+
+/* Buttons */
+
 Ractive.components['btn'] = Ractive.extend({
 	isolated: true,
 	data: {
 		type: 'default'
 	},
-	template: "<a class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' onclick='{{onclick}}' href='{{href}}' data-toggle='{{#dropdown}}dropdown{{/}}'>{{yield}}</a>"
+	template: function() {
+		if( this.get('href') )
+			return "<a class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' href='{{href}}' data-toggle='{{#dropdown}}dropdown{{/}}'>{{yield}}</a>"
+		else
+			return "<button class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' onclick='{{onclick}}' data-toggle='{{#dropdown}}dropdown{{/}}'>{{yield}}</button>"
+	}
 })
 
 
