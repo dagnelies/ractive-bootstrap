@@ -10,20 +10,22 @@
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.min.css">
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Code Mirror -->
-	<link rel="stylesheet" href="libs/codemirror/codemirror.css">
-	<script src="libs/codemirror/codemirror.min.js"></script>
 	
 	<!-- Ractive -->
 	<script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
-	<!-- script src='libs/ractive/ractive.js'></script --> 
-	<script src="libs/ractive/ractive-codemirror.js"></script>
 	
 	<!-- This plugin -->
-	<script src='bin/ractive-bootstrap.js'></script>
+	<script src='bin/ractive-bootstrap.min.js'></script>
 	
-	<!-- Demo page -->
+	<!-- Code Mirror -->
+	<link rel="stylesheet" href="libs/codemirror/codemirror.css">
+	<script src="libs/codemirror/codemirror.min.js"></script>
+	<script src="libs/ractive/ractive-codemirror.js"></script>
+	
+	<!-- Example widget -->
 	<script src='demo-example.js'></script>
+	
+	<!-- Page style -->
 	<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -45,7 +47,32 @@
 			It does not attempt to cover everything in bootstrap, but rather offer the most common elements as shortcuts.
 			Sometimes, when you want something more specific or fancy, you can still use the original bootstrap markup.</i></p>
 			
-		
+			
+			<h3>Usage</h3>
+			
+			<p>Downloads:</p>
+			<ul>
+				<li>Debug: <a href="bin/ractive-bootstrap.js">bin/ractive-bootstrap.js</a></li>
+				<li>Minified: <a href="bin/ractive-bootstrap.min.js">bin/ractive-bootstrap.min.js</a></li>
+			</ul>
+			
+			<p>A typical header would look like this:</p>
+			<pre>
+&lt;!-- JQuery --&gt;
+&lt;script src=&quot;.../jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Bootstrap --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;.../bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;.../bootstrap-theme.min.css&quot;&gt;
+&lt;script src=&quot;.../bootstrap.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Ractive --&gt;
+&lt;script src='.../ractive.js'&gt;&lt;/script&gt;
+
+&lt;!-- This plugin --&gt;
+&lt;script src='.../ractive-bootstrap.min.js'&gt;&lt;/script&gt;
+			</pre>
+			
+			
 			<h3>Grid System</h3>
 			<example url="demo/grid-system.html" />
 			
@@ -104,7 +131,9 @@
 		var ractive = new Ractive({
 			el: 'body',
 			template: '#template',
-			data: {}
+			data: {
+				usage: document.head.innerHTML
+			}
 		});
 	</script>
   
