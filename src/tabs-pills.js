@@ -12,6 +12,8 @@ Ractive.components['tab'] = Ractive.extend({
 	},
 	template: "<li role='presentation' class='{{#active}}active{{/}} {{#disabled}}disabled{{/}}'><a href='{{href}}' on-click='selectIt()'>{{yield}}</a></li>",
 	selectIt: function() {
+		if( this.get('disabled') )
+			return
 		this.container.set('selected', this.get('name'))
 		// return false
 	},
@@ -19,7 +21,7 @@ Ractive.components['tab'] = Ractive.extend({
 		var container = this.container
 		var self = this
 		self.container.observe('selected', function( selected ) {
-			if( self.get('disabled') || !selected )
+			if( !selected )
 				return
 			var name = self.get('name')
 			self.set('active', name === selected )
