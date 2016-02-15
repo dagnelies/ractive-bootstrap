@@ -17,8 +17,8 @@ Ractive.components['modal'] = Ractive.extend({
 				"{{yield}}" +
 			"</modal-body>" +
 			"<modal-footer>" +
-				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
 				"{{#save}}<button class='btn btn-primary' onclick='{{onsave}}'>{{save}}</button>{{/save}}" +
+				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
 			"</modal-footer>" +
 	"</modal-custom>"
 })

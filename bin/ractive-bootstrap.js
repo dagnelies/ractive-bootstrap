@@ -25,9 +25,9 @@ Ractive.components['btn'] = Ractive.extend({
 	},
 	template: function() {
 		if( this.get('href') )
-			return "<a class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' href='{{href}}' data-toggle='{{#dropdown}}dropdown{{/}}'>{{yield}}</a>"
+			return      "<a class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' {{#dropdown}}data-toggle='dropdown'{{/}} href='{{href}}'>{{yield}}</a>"
 		else
-			return "<button class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' onclick='{{onclick}}' data-toggle='{{#dropdown}}dropdown{{/}}'>{{yield}}</button>"
+			return "<button class='btn btn-{{type.replace(/ +/g,\" btn-\")}} {{#disabled}}disabled{{/}} {{#active}}active{{/}} {{#dropdown}}dropdown-toggle{{/}}' {{#dropdown}}data-toggle='dropdown'{{/}} onclick='{{onclick}}'>{{yield}}</button>"
 	}
 })
 
@@ -432,8 +432,8 @@ Ractive.components['modal'] = Ractive.extend({
 				"{{yield}}" +
 			"</modal-body>" +
 			"<modal-footer>" +
-				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
 				"{{#save}}<button class='btn btn-primary' onclick='{{onsave}}'>{{save}}</button>{{/save}}" +
+				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
 			"</modal-footer>" +
 	"</modal-custom>"
 })
@@ -543,9 +543,12 @@ Ractive.components['tab'] = Ractive.extend({
 	isolated: true,
 	data: {
 		active: false,
+		disabled: false
 	},
-	template: "<li role='presentation' class='{{#active}}active{{/}}'><a href='{{href}}' on-click='selectIt()'>{{yield}}</a></li>",
+	template: "<li role='presentation' class='{{#active}}active{{/}} {{#disabled}}disabled{{/}}'><a href='{{href}}' on-click='selectIt()'>{{yield}}</a></li>",
 	selectIt: function() {
+		if( this.get('disabled') )
+			return
 		this.container.set('selected', this.get('name'))
 		// return false
 	},
