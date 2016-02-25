@@ -536,12 +536,26 @@ Ractive.components['b-table'] = Ractive.extend({
 
 /* Tabs & Pills */
 
-Ractive.components['tabs'] = Ractive.extend({isolated: true, template: "<ul class='nav nav-tabs'>{{yield}}</ul>"})
-Ractive.components['pills'] = Ractive.extend({isolated: true, template: "<ul class='nav nav-pills'>{{yield}}</ul>"})
+Ractive.components['tabs'] = Ractive.extend({
+	isolated: true,
+	data: {
+		type: ''
+	},
+	template: "<ul class='nav nav-tabs nav-{{type.replace(/ +/g,\" nav-\")}}'>{{yield}}</ul>"
+})
+
+Ractive.components['pills'] = Ractive.extend({
+	isolated: true,
+	data: {
+		type: ''
+	},
+	template: "<ul class='nav nav-pills nav-{{type.replace(/ +/g,\" nav-\")}}'>{{yield}}</ul>"
+})
 
 Ractive.components['tab'] = Ractive.extend({
 	isolated: true,
 	data: {
+		href: '#',
 		active: false,
 		disabled: false
 	},
