@@ -3,7 +3,11 @@
 
 Ractive.components['panel'] = Ractive.extend({
 	isolated: true,
-	data: { type: 'default' },
+	data: {
+		type: 'default',
+		hidden: false,
+		icon: ''
+	},
 	template: "<panel-custom type='{{type}}' hidden='{{hidden}}'>{{#title}}<panel-heading>{{#icon}}<icon name='{{icon}}'/> {{/icon}}{{title}}</panel-heading>{{/title}}<panel-body>{{yield}}</panel-body>{{#footer}}<panel-footer>{{footer}}</panel-footer>{{/footer}}</panel-custom>"
 })
 Ractive.components['panel-custom'] = Ractive.extend({

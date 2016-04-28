@@ -4,6 +4,12 @@
 Ractive.components['modal'] = Ractive.extend({
 	isolated: true,
 	data: {
+		onshow: "",
+		onclose: "",
+		onsave: "",
+		type: "",
+		title: "",
+		id: "",
 		cancel: "Cancel",
 		save: "Save"
 	},
@@ -26,10 +32,14 @@ Ractive.components['modal'] = Ractive.extend({
 Ractive.components['modal-custom'] = Ractive.extend({
 	isolated: true,
 	data: {
+		id: "",
+		type: "",
+		onshow: "",
+		onclose: "",
 		keyboard: true,
-		backdrop: true
+		backdrop: static
 	},
-	template: "<div class='modal fade' id='{{id}}' tabindex='-1' role='dialog' aria-hidden='true' data-backdrop='{{backdrop}}' data-keyboard='{{keyboard}}'><div class='modal-dialog {{#type}}modal-{{type}}{{/}}'><div class='modal-content'>{{yield}}</div></div></div>",
+	template: "<div class='modal fade' {{#id}}id='{{id}}'{{/id}} tabindex='-1' role='dialog' aria-hidden='true' data-backdrop='{{backdrop}}' data-keyboard='{{keyboard}}'><div class='modal-dialog {{#type}}modal-{{type}}{{/}}'><div class='modal-content'>{{yield}}</div></div></div>",
 	onrender: function() {
 		var elem = this.find('*')
 		

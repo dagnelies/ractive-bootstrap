@@ -3,8 +3,13 @@
 
 Ractive.components['alert'] = Ractive.extend({
 	isolated: true,
-	data: { type: 'info' },
-	template: "<div id='{{id}}' hidden='{{hidden}}' class='alert alert-{{type}} {{#closable}}alert-dismissible{{/closable}}'>{{#closable}}<button type='button' class='close' data-dismiss='alert'>&times;</button>{{/closable}}{{yield}}</div>"
+	data: {
+		id: '',
+		closable: false,
+		hidden: false,
+		type: 'info'
+	},
+	template: "<div {{#id}}id='{{id}}'{{/id}} {{#hidden}}hidden{{/hidden}} class='alert alert-{{type}} {{#closable}}alert-dismissible{{/closable}}'>{{#closable}}<button type='button' class='close' data-dismiss='alert'>&times;</button>{{/closable}}{{yield}}</div>"
 })
 
 
@@ -419,6 +424,12 @@ Ractive.components['page-header'] = Ractive.extend({isolated: true, template: "<
 Ractive.components['modal'] = Ractive.extend({
 	isolated: true,
 	data: {
+		onshow: "",
+		onclose: "",
+		onsave: "",
+		type: "",
+		title: "",
+		id: "",
 		cancel: "Cancel",
 		save: "Save"
 	},
@@ -441,10 +452,14 @@ Ractive.components['modal'] = Ractive.extend({
 Ractive.components['modal-custom'] = Ractive.extend({
 	isolated: true,
 	data: {
+		id: "",
+		type: "",
+		onshow: "",
+		onclose: "",
 		keyboard: true,
-		backdrop: true
+		backdrop: static
 	},
-	template: "<div class='modal fade' id='{{id}}' tabindex='-1' role='dialog' aria-hidden='true' data-backdrop='{{backdrop}}' data-keyboard='{{keyboard}}'><div class='modal-dialog {{#type}}modal-{{type}}{{/}}'><div class='modal-content'>{{yield}}</div></div></div>",
+	template: "<div class='modal fade' {{#id}}id='{{id}}'{{/id}} tabindex='-1' role='dialog' aria-hidden='true' data-backdrop='{{backdrop}}' data-keyboard='{{keyboard}}'><div class='modal-dialog {{#type}}modal-{{type}}{{/}}'><div class='modal-content'>{{yield}}</div></div></div>",
 	onrender: function() {
 		var elem = this.find('*')
 		
@@ -512,7 +527,11 @@ Ractive.components['pagination'] = Ractive.extend({
 
 Ractive.components['panel'] = Ractive.extend({
 	isolated: true,
-	data: { type: 'default' },
+	data: {
+		type: 'default',
+		hidden: false,
+		icon: ''
+	},
 	template: "<panel-custom type='{{type}}' hidden='{{hidden}}'>{{#title}}<panel-heading>{{#icon}}<icon name='{{icon}}'/> {{/icon}}{{title}}</panel-heading>{{/title}}<panel-body>{{yield}}</panel-body>{{#footer}}<panel-footer>{{footer}}</panel-footer>{{/footer}}</panel-custom>"
 })
 Ractive.components['panel-custom'] = Ractive.extend({
