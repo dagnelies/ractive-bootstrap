@@ -18,5 +18,5 @@ Ractive.components['pagination'] = Ractive.extend({
 			return list
 		}
 	},
-	template: "<nav><ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul></nav>"
+	template: "<nav><ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='@this.set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul></nav>"
 })

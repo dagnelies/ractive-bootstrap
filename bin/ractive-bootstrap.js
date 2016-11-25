@@ -520,7 +520,7 @@ Ractive.components['pagination'] = Ractive.extend({
 			return list
 		}
 	},
-	template: "<nav><ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul></nav>"
+	template: "<nav><ul class='pagination {{#type}}pagination-{{type}}{{/}}'>{{#each pages}}<li {{#if . == value}}class='active'{{/if}}><a {{#url}}href='{{url}}{{.}}'{{/}} on-click='@this.set(\"value\", .)'>{{.}}</a></li>{{/each}}</ul></nav>"
 })
 
 
@@ -579,12 +579,15 @@ Ractive.components['tab'] = Ractive.extend({
 		active: false,
 		disabled: false
 	},
-	template: "<li role='presentation' class='{{#active}}active{{/}} {{#disabled}}disabled{{/}}'><a href='{{href}}' on-click='selectIt()'>{{yield}}</a></li>",
+	template: "<li role='presentation' class='{{#active}}active{{/}} {{#disabled}}disabled{{/}}'><a href='{{href}}' on-click='@this.selectIt()'>{{yield}}</a></li>",
 	selectIt: function() {
 		if( this.get('disabled') )
-			return
+			return false // don't bubble
+		
 		this.container.set('selected', this.get('name'))
-		// return false
+		
+		var href = this.get('href')
+		return (href && href != '#') // allow event propagation if there is a link
 	},
 	onrender: function() {
 		var container = this.container
