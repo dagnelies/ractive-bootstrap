@@ -11,7 +11,8 @@ Ractive.components['modal'] = Ractive.extend({
 		title: "",
 		id: "",
 		cancel: "Cancel",
-		save: "Save"
+		save: "Save",
+		save_disabled: false
 	},
 	template: 
 		"<modal-custom id='{{id}}' onshow='{{onshow}}' onclose='{{onclose}}' type='{{type}}' >" +
@@ -23,7 +24,7 @@ Ractive.components['modal'] = Ractive.extend({
 				"{{yield}}" +
 			"</modal-body>" +
 			"<modal-footer>" +
-				"{{#save}}<button class='btn btn-primary' onclick='{{onsave}}'>{{save}}</button>{{/save}}" +
+				"{{#save}}<button class='btn btn-primary' onclick='{{onsave}}' {{#if save_disabled}}disabled{{/if}}>{{save}}</button>{{/save}}" +
 				"{{#cancel}}<button class='btn btn-default' data-dismiss='modal'>{{cancel}}</button>{{/cancel}}" +
 			"</modal-footer>" +
 	"</modal-custom>"
