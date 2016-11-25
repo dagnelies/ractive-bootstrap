@@ -7,8 +7,8 @@
 	One fine body...
 </modal>
 
-<modal id="large_modal" title="Large title" type="lg">
-	One fine body...
+<modal id="large_modal" title="Large title" type="lg" save_disabled="{{!foo}}">
+	<input class="form-control" value="{{foo}}" placeholder="Type something to enable save button..." />
 </modal>
 
 <modal id="events_modal" title="Modal title" onclose="alert('Closed!')" onsave="alert('Saved!')">
