@@ -400,7 +400,7 @@ var icons = [
 
 Ractive.components['icon'] = Ractive.extend({template: "<span class='glyphicon glyphicon-{{name}}' aria-hidden='true'></span>"})
 for( var i in icons ) {
-	Ractive.components['icon-' + icons[i]] = Ractive.extend({template: "<icon/>", data: {name: icons[i]}})
+	Ractive.components['icon-' + icons[i]] = Ractive.extend({template: "<icon name='" + icons[i] + "' />"})
 }
 
 icons = undefined
